@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <title>{% block title %}Auth{% endblock %}</title>
+</head>
+<body>
+{% include 'alerts.html' %}
+
+{% if current_user.is_authenticated() %}
+<div class="container">
+  {{ current_user.username }}
+  <a href="{{ url_for('logout') }}" class="btn btn-default">Logout</a>
+</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  {{ super() }} | Home
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Welcome to Auth!</h1>
+  <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+  <a href="{{ url_for('register') }}" class="btn btn-primary">Register</a>
+</div>
+</div>
+{% endblock %}
